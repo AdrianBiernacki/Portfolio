@@ -1,0 +1,184 @@
+//INTRO
+body {
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+#main {
+    padding:100px 0;
+    height:100vh;
+    display:flex;
+    background: url("@{image}/background.png");
+    color: @white;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    @media @res768 {
+
+    }
+
+    @media @res480 {
+        padding:50px 0;
+    }
+}
+.skills{
+    display:flex;
+    justify-content: space-around;
+
+    text-align: center;
+    flex-wrap: wrap;
+    img {
+        width:100%;
+    }
+
+    & > div {
+        width:200px;
+        height:200px;
+        opacity:0;
+        margin-top: 20px;
+        display:flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @media @res768{
+
+            width:150px;
+            height:150px;
+        }
+        @media @res480{
+            width:100px;
+            height:100px;
+        }
+    }
+    .level{
+        width:100%;
+        & > span {
+            opacity:0;
+            display:inline-block;
+            width:20px;
+            height:20px;
+            background-color: @white ;
+            border-radius: 50%;
+            margin-left:5px;
+            transition-property: opacity;
+            transition-duration: 1s;
+
+            @media @res768 {
+                width:13px;
+                height:13px;
+            }
+            @media @res768 {
+                width:9px;
+                height:9px;
+            }
+            &.opacity-1{
+                opacity: 1;
+            }
+
+            &.active{
+                background-color: @red;
+
+            }
+        }
+    } 
+    &.front-end{
+        & > div{
+            &.animationFront{
+                animation: showSkillsFrontEnd 1s; 
+                animation-fill-mode: forwards;
+            }
+
+        }
+    }
+    &.back-end{
+        & > div{
+            &.animationBack {
+                animation: showSkillsBackEnd 1s; 
+                animation-fill-mode: forwards;
+            }
+
+        }
+    }
+}
+@keyframes showSkillsFrontEnd{
+    0% { transform: translateY(120px)}
+    100% { opacity: 1; transform: translateY(0px)}
+}
+
+@keyframes showSkillsBackEnd{
+    0% { transform: translateY(-120px)}
+    100% { opacity: 1; transform: translateY(0px)}
+}
+
+
+
+
+//PROJECTS
+
+#projects{
+    background-color:@white;
+    padding-bottom: 100px;
+    background: url("@{image}/texturetastic_gray.png");
+
+    h2{
+        font-size: 4.5em;
+        font-weight: 700;
+        color: @black;
+        text-align:center;
+        padding:50px 0;
+        @media @res768{
+            font-size: 3em;
+        }
+        @media @res480 {
+            font-size: 2em;
+        }
+        &:before{
+            content: '';
+            display:inline-block;
+            width:70px;
+            height:7px;
+            position:relative;
+            left: -5px;
+            top:-20px;
+            background-color: @orange;
+            @media @res768 {
+                top: -13px;
+                width:50px;
+                height:5px;
+            }
+            @media @res480 {
+                top: -10px;
+                width:30px;
+                height: 3px;
+            }
+        }
+        &:after{
+            content: '';
+            display:inline-block;
+            width:70px;
+            height:7px;
+            position:relative;
+            left: 5px;
+            top:-20px;
+            background-color: @orange;
+            @media @res768 {
+                top: -13px;
+                width:50px;
+                height:5px;
+
+            }
+            @media @res480 {
+                top: -10px;
+                width:30px;
+                height: 3px;
+            }
+        }
+    }
+}
+
+a{
+    color:@black;
+    &:hover {
+        color: @black;
+    }
+}

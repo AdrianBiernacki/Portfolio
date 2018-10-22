@@ -1,0 +1,32 @@
+.content-type{
+    text-align:center;
+    min-height: 192px;
+    word-wrap: break-word;
+    padding:20px 0;
+    font-size:3em;
+    @media @res480 {
+        font-size: 1.5rem;
+        min-height: 112px;
+    }
+}
+
+#type-cursor:after {
+    content: '|';
+    background-color: @white;
+    margin-left: 5px;
+    transition-duration: 1s;
+    opacity:0;
+}
+#type-cursor.active:after{
+    animation: pipe 1s infinite;
+}
+
+#type-cursor.stopAnimate:after {
+    animation: none;
+    opacity: 0.8;
+}
+
+@keyframes pipe {
+    0% { opacity:  0.8}
+    100% { opacity : 0}
+}
